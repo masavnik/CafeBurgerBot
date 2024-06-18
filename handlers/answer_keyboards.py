@@ -27,18 +27,19 @@ async def get_contact(message: Message):
 #     await message.answer(
 #         'Будет открываться магазин'
 #     )
+@router.message(F.text == '😉Пригласить друга')
+async def get_ref(message: Message):
+    await message.answer(
+        'Здесь будет реферальная система'
+    )
 
 
 @router.message(F.text == '🛒Мои заказы')
-async def get_contact(message: Message):
+async def get_order(message: Message):
     await message.answer(
         'В данный момент у вас нет активных заказов в нашем магазине.'
         'Чтобы открыть магазин введите команду - /shop'
     )
 
 
-@router.message(F.text == '‍♂️Пригласить друга')
-async def get_contact(message: Message):
-    await message.answer(
-        'Здесь будет риферальная система'
-    )
+
