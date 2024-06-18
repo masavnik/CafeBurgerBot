@@ -4,7 +4,7 @@ import link
 
 kb = [
     [
-        types.KeyboardButton(text='🛍Магазин', web_app=WebAppInfo(url=f'{link}')),
+        types.KeyboardButton(text='🛍Магазин', web_app=WebAppInfo(url=f'https://masavnik.github.io/CafeBurgerBot/link/base.html')),
         types.KeyboardButton(text='🛒Мои заказы')
     ],
     [types.KeyboardButton(text='☎️Контакты')],
