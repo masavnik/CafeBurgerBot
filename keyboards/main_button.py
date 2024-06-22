@@ -4,7 +4,7 @@ from aiogram.types import WebAppInfo
 kb = [
     [
         types.KeyboardButton(text='🛍Магазин',
-                             web_app=WebAppInfo(url=f'https://masavnik.github.io/CafeBurgerBot/link/base.html')),
+                             web_app=WebAppInfo(url=f'https://masavnik.github.io/CafeBurgerBot/sites/base.html')),
         types.KeyboardButton(text='🛒Мои заказы')
     ],
     [types.KeyboardButton(text='☎️Контакты')],
