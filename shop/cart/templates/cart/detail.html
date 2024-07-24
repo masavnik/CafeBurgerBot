@@ -1,0 +1,93 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+
+{% block title %}
+Корзина покупок
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="order-title">
+        <h3>
+            Корзина
+        </h3>
+    </div>
+    <button class="order-button">
+        <a href="{% url 'shop:product_list' %}">Продолжить покупки
+        </a> 
+    </button>
+  </header>
+<div class="cart_list">
+    <div class="count_cart">
+        {% if count_product == 0 %}
+        Корзина пустая
+        {% else %}
+            Количество товаров: {{ count_product }}
+        </div>
+        {% endif %}
+
+    <table  class="cart">
+        {% for item in cart %}
+        {% with product=item.product %}
+            <tr class="product">
+                <td>
+                    <a href="{{ product.get_absolute_url }}">
+                        <img class="photo_product_cart"
+                        src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+                    </a>  
+                </td>
+                
+                <td class="total_price">
+                    <div>
+                        {{ item.total_price }} ₽
+                    </div>
+                    <h5>
+                        {{ product.name }}
+                    </h5>
+                    <h5>
+                        {{ item.quantity }}
+                    </h5>
+
+
+                </td>
+
+                <td class="krest">
+                    <a href="{% url 'cart:cart_remove' product.id %}">
+                        <img src="https://clipart-library.com/img/1718397.png" alt="krest" width="20" height="20">
+                    </a>
+                </td>
+            </tr>
+        {% endwith %}
+        {% endfor %}
+
+        
+    </table>
+    {% if count_product > 0 %}
+    <div class="bottom_div">
+        <div>
+            Итого: {{ cart.get_total_price }} ₽
+        </div>
+    </div>
+
+    <p class="text-right">
+        <button>
+            <a href="{% url 'orders:order_create' %}" class="button">К оформлению     ></a>
+        </button>
+    </p>
+    {% endif %}
+    
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+<!-- <form action="{% url 'cart:cart_add' product.id %}" method="post">
+    {{ item.update_quantity_form.quantity }}
+    {{ item.update_quantity_form.update }}
+    <input type="submit" value="Обновить">
+    {% csrf_token %}
+</form> -->

@@ -1,0 +1,44 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Товары{% endif %}
+{% endblock %}
+{% block content %}
+<div class="block_delivery">
+    <h2>Информация о доставке</h2>
+    <p>
+        После того, как Вы сделали заказ, наши менеджеры связываются с Вами для подтверждения заказа
+    </p>
+
+    <h2>
+        Доставка курьером по г. Москва
+    </h2>
+
+    <p>
+        Стоимость доставки по г. Москва в пределах - 500 руб.
+        При заказе на сумму от 10000 руб. - доставка осуществляется бесплатно в пределах города.
+    </p>
+</div>
+
+
+<div class="cart_link">
+    {% with total_items=cart|length %}
+    {% if cart|length > 0 %}
+        <button>
+            <a href="{% url 'cart:cart_detail' %}">
+                Корзина ({{ total_items }})
+            </a>
+        </button>
+
+    {% else %}
+
+    {% endif %}
+    {% endwith %}
+</div>    
+<p class="text-right">
+    <button>
+        <a href="{% url 'myshop:product_list' %}">Вернуться к продуктам</a>
+    </button>
+</p>
+    
+{% endblock %}

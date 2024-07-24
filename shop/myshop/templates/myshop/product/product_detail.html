@@ -1,0 +1,40 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+{% block title %}
+{{ product.name }}
+{% endblock %}
+{% block content %}
+<header>
+    <button class="detail-krest">
+        <a href="{% url 'shop:product_list' %}">В МАГАЗИН
+        </a> 
+    </button>
+</header>
+
+<div class="product-detail">
+    <img class="photo_product_detail" src="{% if product.image %}{{ product.image.url }}{% else %}
+    {% static 'img/no_image.png' %}{% endif %}">
+    <div class="text_detail">
+        <h5>
+            {{ product.category }}
+        </h5>
+    
+        <h1 class="price">
+            {{ product.price }} ₽
+        </h1>
+    
+        <h2 class="name_product">
+            {{ product.name }}
+        </h2>
+    
+        <h6 class="discription_product">
+            {{ product.description|linebreaks }}<br>
+        </h6>
+    </div>
+    <form class="count" action="{% url 'cart:cart_add' product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input class="button-container" type="submit" value="В корзину">
+    </form>
+</div>
+{% endblock %}

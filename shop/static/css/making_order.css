@@ -1,0 +1,165 @@
+.order-info {
+margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* .form-group {
+    
+} */
+
+/* Кнопка снизу */
+.oform input {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ff0033;
+    color: white;
+    padding: 0px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.top_list {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 15px;
+}
+
+/* .back_cart button {
+    display: block;
+    background-color: #dfdfdf;
+    border: none;
+    border-radius: 5px;
+    margin-top: 0px;
+    width: 150px;
+    height: 20px;
+    padding-right: 50px;
+}
+
+.back_cart button a {
+    display: block;
+    font-size: 11px;
+    text-decoration: none;
+    color:black;
+} */
+
+.form-group {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 20px;
+    
+}
+
+.form-group label {
+    font-size: 13px;
+}
+
+.forms {
+    margin-top: 20px;
+}
+
+h3 {
+    display: block;
+    padding-top: 10px;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+  }
+
+.order-button {
+    background-color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 20px;
+    
+}
+
+header a {
+    font-size: 11px;
+    text-decoration: none;
+    color:black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name_user {
+    width:340px;
+    height: 30px;
+    border-radius: 5px;
+    border-width: 1px;
+    border: none;
+    background-color: #ffffff;
+    padding-left: 5px;
+    box-shadow: 0 0 4px #9c9898;
+}
+
+.phone_user {
+    width:340px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffffff;
+    text-align:left;
+    padding-left: 5px;
+    box-shadow: 0 0 4px #9c9898;
+}
+.address {
+    width:340px;
+    height: 30px;
+    border-radius: 5px;
+    border-width: 1px;
+    border: none;
+    background-color: #ffffff;
+    padding-left: 5px;
+    box-shadow: 0 0 4px #9c9898;
+}
+
+.form-control {
+    border-radius: 5px;
+    border-width: 1px;
+    border: none;
+    background-color: #ffffff;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    resize: none;
+    box-shadow: 0 0 4px #9c9898;
+
+}
+
+.input_form {
+    padding-top: 5px;
+}
+
+
+html {
+    background-color: rgb(240, 240, 240); /* Серый цвет */
+  }
+
+header {
+    background-color: rgb(240, 240, 240); /* Серый цвет */
+  }
+
+.order-info h2 {
+    display: flex;
+    margin-bottom: 70px;
+    margin-left: 15px;
+}

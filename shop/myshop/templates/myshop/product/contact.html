@@ -1,0 +1,55 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Товары{% endif %}
+{% endblock %}
+{% block content %}
+<div class="block_con">
+    <h2>Контактная информация</h2>
+    <p>
+        Наши менеджеры всегда на связи 24/7,
+        по каким либо вопросам, пишите в службу поддержки
+    </p>
+    <div class="address_about">
+        Наш адрес: Озёрная ул., 44
+    </div>
+    <div>
+        Номер телефона: +7 (969) 238-48-88
+    </div>
+</div>
+
+<div class="tg_button">
+    <p class="text-right">
+        <button>
+            <a href="https://t.me/LouisBurger44">Наш телеграм канал</a>
+        </button>
+    </p>
+</div>
+
+
+
+<div class="cart_link">
+    {% with total_items=cart|length %}
+    {% if cart|length > 0 %}
+        <button>
+            <a href="{% url 'cart:cart_detail' %}">
+                Корзина ({{ total_items }})
+            </a>
+        </button>
+
+    {% else %}
+
+    {% endif %}
+    {% endwith %}
+</div>   
+
+<div class="div_but_product">
+    <p class="text-right">
+        <button>
+            <a href="{% url 'myshop:product_list' %}">Вернуться к продуктам</a>
+        </button>
+    </p>
+</div>
+
+    
+{% endblock %}

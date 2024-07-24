@@ -1,0 +1,49 @@
+{% extends "myshop/base.html" %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+    <header>
+    <div class="order-title">Оформление заказа</div>
+    <button class="order-button">
+        <a href="{% url 'cart:cart_detail' %}">
+            Назад в корзину
+        </a> 
+    </button>
+  </header>
+    <div class="order-info">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            <div class="forms">
+            {% for field in form %}
+                <div class="form-group">
+                    {{field.label_tag}}
+                    <div class="input_form">{{field}}</div>
+                    {% if field.errors %}
+                    {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        {{error}}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            </div>
+            <div class="oform">
+                <input type="submit" value="Оформить">
+            </div>
+            
+        </form>
+        <h2>
+            Итого: {{ cart.get_total_price }} ₽
+        </h2>
+
+    </div>
+    
+
+    <!-- <form action="." method="post" class="order-form">
+        {{ form.as_p }}
+        <p><input type="submit" value="Оформить"></p>
+        {% csrf_token %}
+    </form> -->
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Товары{% endif %}
+{% endblock %}
+{% block content %}
+<div class="block_con">
+    <h2>Отзывы клиентов</h2>
+    <p>
+        Вам у нас понравилось? Оставьте отзыв по ссылке ниже
+    </p>
+</div>
+
+<div class="tg_button">
+    <p class="text-right">
+        <button>
+            <a href="https://yandex.ru/maps/org/louis_burger/17387177709/reviews/?ll=37.440245%2C55.667666&z=17">
+                Оставить отзыв
+            </a>
+        </button>
+    </p>
+</div>
+
+
+
+<div class="cart_link">
+    {% with total_items=cart|length %}
+    {% if cart|length > 0 %}
+        <button>
+            <a href="{% url 'cart:cart_detail' %}">
+                Корзина ({{ total_items }})
+            </a>
+        </button>
+
+    {% else %}
+
+    {% endif %}
+    {% endwith %}
+</div>   
+
+<div class="div_but_product">
+    <p class="text-right">
+        <button>
+            <a href="{% url 'myshop:product_list' %}">Вернуться к продуктам</a>
+        </button>
+    </p>
+</div>
+
+    
+{% endblock %}

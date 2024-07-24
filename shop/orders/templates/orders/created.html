@@ -1,0 +1,23 @@
+{% extends "myshop/base.html" %}
+
+{% block title %}Thank you{% endblock %}
+
+{% block content %}
+<div class="create_message">
+    <div class="order_number">
+        <h1>Спасибо за заказ</h1>
+        <p>Наш менеджер скоро вам напишет в телеграм, для подтверждения заказа</p>
+        <h2>ВАШ ЗАКАЗ: №<strong>{{ order.id }}</strong></h2>
+    </div>
+
+    <button class="orderback">
+        <a href="{% url 'shop:product_list' %}">Назад в магазин
+        </a> 
+    </button>
+</div>
+    
+    
+
+    
+
+{% endblock %}

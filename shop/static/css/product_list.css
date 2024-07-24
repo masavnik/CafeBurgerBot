@@ -1,0 +1,247 @@
+.blocks {
+  background-color: rgb(240, 240, 240);
+  border-radius: 20px;
+  position: relative;
+  top: -20px;
+}
+
+
+
+/* Блок из продуктов */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    padding: 0px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  /* Фото категорий */
+.photo_category {
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-categories {
+  display: flex;
+  white-space: nowrap;
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+  height: 100px;
+  margin-left: 5px;
+  margin-right: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+.product-categories::-webkit-scrollbar {
+  display: none; /* Для Chrome, Safari и Opera */
+}
+
+/* Категория */
+.category {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-right: -20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+
+}
+
+/* Текст категории */
+.text_categories {
+  text-decoration: none;
+  width: 40px;
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+  
+}
+
+
+/* Фото продукта */
+.photo_product {
+    object-fit: cover;
+    width: 170px;
+    height: 170px;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+/* Продукт */
+.item {
+    display: block;
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 175px;
+    height: 320px;
+    background-color: white;
+    padding-top: 2px;
+    }
+
+/* Текст продукта */
+.text_product {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* Кнопка В КОРЗИНУ */
+.button_add input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ff0033;
+    padding: 6px 50px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    position: relative;
+
+}
+
+/* Блок категории и товаров */
+.cat_prod {
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+    position: relative;
+    top: 0px;
+
+}
+
+
+/* Данные продукта */
+.item_product {
+    width: 48%;
+    margin-bottom: 20px;
+    background-size: cover;
+    text-decoration: none;
+    cursor:pointer;
+    color: black;
+  }
+
+.item h6 {
+    color: rgb(163, 163, 163);
+  }
+
+.item h2 {
+    margin-top: 5px;
+    margin-left: 2px;
+  }
+
+.item h5 {
+    margin-top: 10px;
+  }
+
+  /* Корзина внизу */
+.cart_link button {
+  position: fixed;
+  bottom: 0;
+  /* left: 0; */
+  width: 100%;
+  background-color: #ff0033;
+  color: white;
+  padding: 0px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  height: 50px;
+  
+}
+
+.cart_link a {
+  display: block;
+  text-decoration: none;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.cart_link {
+  padding-top: 30px;
+}
+
+.price_dis {
+  display: flex;
+}
+
+.price_dis h3 {
+  padding-left: 0px;
+  color: #ff0033;
+}
+
+.price_dis .old_price {
+  margin-left: 10px;
+  color: rgb(163, 163, 163);
+  margin-top: 12px;
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+}
+
+/* Поле вода количества */
+.button_add .form_quant {
+  position: relative;
+  display: block;
+  width: 10px;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #afafaf;
+  padding-bottom: 5px;
+  margin-top: 11px;
+  transform: translate(0px, -10px);
+}
+
+
+.menu {
+  padding: 5px 10px;
+  border: none;
+  background-color: none;
+  text-align: center;
+}
+
+.menu ul {
+  margin: 0; /* Обнуляем значение отступов */
+  padding: 4px; /* Значение полей */
+  text-decoration: none;
+  text-align: center;
+
+  padding-right: 20px;
+ }
+ 
+ .menu ul li {
+  display: inline; /* Отображать как строчный элемент */
+  padding-left: 15px;
+  
+
+ }
+
+ .menu ul li a {
+  text-decoration: none;
+  font-size: 10px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+.menu ul li button {
+  background-color: #ff0033;
+  background-attachment: fixed;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+}

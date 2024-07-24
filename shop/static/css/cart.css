@@ -1,0 +1,78 @@
+
+/* Блок всей корзины */
+.cart_list {
+    display: block;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+/* Фото продукта */
+.photo_product_cart {
+    object-fit: cover;
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Блок кнопки и ссылки - К оформлению */
+.text-right {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 30px;
+}
+
+/* Кнопка - к оформлению */
+.text-right button {
+    display: block;
+    width: 200px;
+    height: 40px;
+    background-color: #ff0033;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    bottom: 0
+}
+
+
+/* Ссылка на кнопке (текст) */
+.text-right button a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.cart {
+    display: block;
+    padding-top: 10px;
+}
+
+table {
+    width: 100%; /* Устанавливаем ширину таблицы на 100% */
+    border-collapse: collapse; /* Убираем границы между ячейками */
+  }
+  
+table td {
+    vertical-align: top; /* Выравниваем содержимое ячеек по верхнему краю */
+    padding: 10px; /* Добавляем отступы внутри ячеек */
+  }
+
+.krest {
+    padding-top: 40px;
+    padding-left: 50px;
+}
+
+
+.bottom_div {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.count_cart {
+    margin-left: 10px;
+}
+
+

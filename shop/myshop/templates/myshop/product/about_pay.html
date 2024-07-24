@@ -1,0 +1,39 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Товары{% endif %}
+{% endblock %}
+{% block content %}
+<div class="block_pay">
+    <h2>Информация об оплате</h2>
+    <p>
+        Мы принимаем наличные средства, банковские карты (VISA, MasterCard и МИР),
+        электронные деньги, безналичные расчеты от физических и юридических лиц.
+        У нас нету минимальной суммы заказа, Вы можете заказывать продукцию
+        от любого количества и суммы.
+        А также можете оплатить напрямую нашему менеджеру: @Команда Войковская
+    </p>
+</div>
+
+
+<div class="cart_link">
+    {% with total_items=cart|length %}
+    {% if cart|length > 0 %}
+        <button>
+            <a href="{% url 'cart:cart_detail' %}">
+                Корзина ({{ total_items }})
+            </a>
+        </button>
+
+    {% else %}
+
+    {% endif %}
+    {% endwith %}
+</div>    
+<p class="text-right">
+    <button>
+        <a href="{% url 'myshop:product_list' %}">Вернуться к продуктам</a>
+    </button>
+</p>
+    
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Товары{% endif %}
+{% endblock %}
+{% block content %}
+
+
+<div class="slider">
+    {% for photo in photo_slider %}
+    <img src="{{ photo.image.url }}" class="slide">
+    {% endfor %}
+</div>
+
+
+<div class="blocks">
+    <div class="menu">
+        <ul>
+            <li>
+                <button>
+                    <a href="{% url 'myshop:delivery' %}">Доставка</a>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <a href="{% url 'myshop:about_pay' %}">Оплата</a>
+                </button>
+    
+            </li>
+            <li>
+                <button>
+                    <a href="{% url 'myshop:contact' %}">Контакты</a>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <a href="{% url 'myshop:reviews' %}">Отзывы</a>
+                </button>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <div class="cat_prod">
+        <div id="category" class="product-categories">
+            <div>
+                {% for c in categories %}
+                <div class="category">
+                    <a href="{{ c.get_absolute_url }}">
+                    <img class="photo_category"
+                    src="{% if c.image %}{{ c.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+                    </a>
+                    <div>
+    
+                    </div>
+                    <a class="text_categories" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    
+        <div id="main" class="product-list">
+            {% for product in products %}
+            <div class="item">
+                <a class="item_product" href="{{ product.get_absolute_url }}">
+    
+                    <img class="photo_product"
+                         src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+                    <div class="text_product">
+                        <h6>{{ product.category }}</h6>
+                        <h5>{{ product.name }}</h5>
+                        {% if product.discount == 0 %}
+                            <h3>{{ product.price }} ₽</h3>
+                        {% else %}
+                        <div class="price_dis">
+                            <h3>{{ product.get_discounted_price }} ₽</h3>
+                            <div class="old_price">{{ product.price }} ₽</div>
+    
+                        </div>
+    
+                        {% endif %}
+                    </div>
+    
+                </a>
+    
+                <form class="button_add" action="{% url 'cart:cart_add' product.id %}" method="post">
+                    {{ cart_product_form }}
+                    {% csrf_token %}
+                    <input type="submit" value="В корзину">
+                </form>
+    
+            </div>
+        
+    
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="cart_link">
+    {% with total_items=cart|length %}
+    {% if cart|length > 0 %}
+        <button>
+            <a href="{% url 'cart:cart_detail' %}">
+                Корзина ({{ total_items }})
+            </a>
+        </button>
+
+    {% else %}
+
+    {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}
+<script src="{% static 'js/script.js' %}"></script>
+
+
+
+
+
+
+
