@@ -1,9 +1,14 @@
 from aiogram import Router, F
 from aiogram.enums import ParseMode
 from aiogram.types import Message
+from aiogram.utils.markdown import hlink
+
 
 
 router = Router()
+
+reviews = hlink('Оставить отзыв', 'https://clck.ru/3C6MBm')
+manager = hlink('Написать нам', 'https://t.me/barista_chef')
 
 
 @router.message(F.text == '☎️Контакты')
@@ -11,22 +16,17 @@ async def get_contact(message: Message):
     await message.answer(
         '<b>Контакты:</b>\n'
         '\n'
-        '☎️ <b>Телефон:</b> ВАШ КОНТАКТ\n'
+        '☎️ <b>Телефон:</b> +7 (969) 238-48-88\n'
         '\n'
-        '📝 <b>Отзывы:</b> Оставить отзыв (Ваша ссылка где будет отзыв)\n'
+        f'📝 <b>Отзывы:</b> {reviews}\n'
         '\n'
-        '💬 <b>Менеджер:</b> Написать нам (Ваш менеджер)\n'
-        '\n'
-        'Можете добавить другие контакты',
-        parse_mode=ParseMode.HTML
+        f'💬 <b>Менеджер:</b> {manager}\n'
+        '\n',
+        parse_mode=ParseMode.HTML,
+        disable_web_page_preview=True
     )
 
 
-# @router.message(F.text == '🛍Магазин')
-# async def get_contact(message: Message):
-#     await message.answer(
-#         'Будет открываться магазин'
-#     )
 @router.message(F.text == '😉Пригласить друга')
 async def get_ref(message: Message):
     await message.answer(
