@@ -3,8 +3,6 @@ from aiogram.enums import ParseMode
 from aiogram.types import Message
 from aiogram.utils.markdown import hlink
 
-
-
 router = Router()
 
 reviews = hlink('Оставить отзыв', 'https://clck.ru/3C6MBm')
@@ -27,19 +25,21 @@ async def get_contact(message: Message):
     )
 
 
-@router.message(F.text == '😉Пригласить друга')
-async def get_ref(message: Message):
-    await message.answer(
-        'Здесь будет реферальная система'
-    )
+# @router.message(F.text == '😉Пригласить друга')
+# async def get_ref(message: Message):
+#     await message.answer(
+#         'Здесь будет реферальная система'
+#     )
 
-
-@router.message(F.text == '🛒Мои заказы')
-async def get_order(message: Message):
-    await message.answer(
-        'В данный момент у вас нет активных заказов в нашем магазине.'
-        'Чтобы открыть магазин введите команду - /shop'
-    )
-
-
-
+# @router.message(F.text == '🛒Мои заказы')
+# async def get_order(message: Message):
+#     ...
+#     # objects = Product.objects.all()
+#     #
+#     # # Формируем сообщение
+#     # response = 'Данные из базы данных:nn'
+#     # for obj in objects:
+#     #     response += f'{obj.field1} - {obj.field2}n'
+#     #
+#     # # Отправляем сообщение пользователю
+#     # await message.answer(response)

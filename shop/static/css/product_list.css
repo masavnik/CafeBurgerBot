@@ -212,7 +212,7 @@
 
 .menu ul {
   margin: 0; /* Обнуляем значение отступов */
-  padding: 4px; /* Значение полей */
+  padding: 0px; /* Значение полей */
   text-decoration: none;
   text-align: center;
 
@@ -221,7 +221,7 @@
  
  .menu ul li {
   display: inline; /* Отображать как строчный элемент */
-  padding-left: 15px;
+  padding-left: 5px;
   
 
  }
